@@ -212,14 +212,6 @@ describe('useCart Hook', () => {
       amount: 1,
     });
 
-    apiMock.onGet(`products/${productId}`).reply(200, {
-      id: 1,
-      image:
-        'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg',
-      price: 179.9,
-      title: 'Tênis de Caminhada Leve Confortável',
-    })
-
     const { result, waitFor } = renderHook(useCart, {
       wrapper: CartProvider,
     });
@@ -239,7 +231,7 @@ describe('useCart Hook', () => {
         expect(mockedSetItemLocalStorage).not.toHaveBeenCalled();
       },
       {
-        timeout: 1000,
+        timeout: 200,
       }
     );
   });

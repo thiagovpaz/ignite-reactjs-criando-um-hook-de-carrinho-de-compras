@@ -34,8 +34,8 @@ const Cart = (): JSX.Element => {
       }, 0)
     )
 
-  function handleProductIncrement(product: Product) {
-    updateProductAmount({productId: product.id, amount: product.amount + 1});
+  async function handleProductIncrement(product: Product) {
+    await updateProductAmount({productId: product.id, amount: product.amount + 1});
   }
 
   function handleProductDecrement(product: Product) {
